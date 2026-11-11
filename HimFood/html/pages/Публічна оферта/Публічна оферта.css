@@ -1,0 +1,168 @@
+/* ==========================================
+   Публічна оферта (Без зовнішнього контейнера)
+   ========================================== */
+
+.offer-block {
+  /* Червона палітра та нейтральні тони */
+  --offer-primary: #18181b;        /* Темний заголовок та контрастний текст */
+  --offer-accent: #dc2626;         /* Основний червоний акцент */
+  --offer-accent-dark: #b91c1c;    /* Темно-червоний для деталізації */
+  --offer-text: #3f3f46;           /* Основний текст */
+  --offer-muted: #71717a;          /* Приглушений текст */
+  --offer-border: #e4e4e7;         /* Нейтральні межі */
+  --offer-highlight-bg: #fef2f2;   /* Світло-рожевий/червоний фон для нотаток */
+  --offer-highlight-text: #991b1b;  /* Темно-червоний текст у нотатках */
+
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--offer-text);
+  font-family: inherit; /* Успадковує шрифт вашого сайту */
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+/* Скидання стилів для елементів всередині блоку */
+.offer-block *,
+.offer-block *::before,
+.offer-block *::after {
+  box-sizing: border-box;
+}
+
+/* Шапка документа */
+.offer-block .offer-header {
+  border-bottom: 2px solid var(--offer-highlight-bg);
+  padding-bottom: 20px;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+/* Червона акцентна смуга під заголовком */
+.offer-block .offer-header::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background-color: var(--offer-accent);
+}
+
+.offer-block .offer-header h1 {
+  font-size: 2rem;
+  color: var(--offer-primary);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 12px 0;
+}
+
+.offer-block .offer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.875rem;
+  color: var(--offer-muted);
+}
+
+/* Заголовки розділів */
+.offer-block h2 {
+  font-size: 1.3rem;
+  color: var(--offer-primary);
+  margin: 36px 0 16px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--offer-border);
+  font-weight: 600;
+}
+
+.offer-block h3 {
+  font-size: 1.1rem;
+  color: var(--offer-primary);
+  margin: 24px 0 12px 0;
+  font-weight: 600;
+}
+
+/* Абзаци та списки */
+.offer-block p {
+  margin: 0 0 16px 0;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.offer-block ol,
+.offer-block ul {
+  margin: 0 0 20px 0;
+  padding-left: 24px;
+}
+
+.offer-block li {
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+
+.offer-block li::marker {
+  color: var(--offer-accent);
+  font-weight: 700;
+}
+
+/* Важливі виділення та сноски */
+.offer-block .offer-note {
+  background-color: var(--offer-highlight-bg);
+  border-left: 4px solid var(--offer-accent);
+  padding: 16px 20px;
+  margin: 24px 0;
+  border-radius: 0 12px 12px 0;
+  font-size: 0.95rem;
+  color: var(--offer-highlight-text);
+}
+
+/* Таблиці */
+.offer-block table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  font-size: 0.95rem;
+}
+
+.offer-block th,
+.offer-block td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--offer-border);
+}
+
+.offer-block th {
+  background-color: var(--offer-highlight-bg);
+  color: var(--offer-highlight-text);
+  font-weight: 600;
+}
+
+/* Блок реквізитів */
+.offer-block .reconcile-block {
+  margin-top: 40px;
+  padding: 24px;
+  background-color: #fafafa;
+  border: 1px solid var(--offer-border);
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.offer-block .reconcile-block h3 {
+  margin-top: 0;
+  color: var(--offer-accent-dark);
+  border-bottom: none;
+}
+
+/* Мобільна адаптивність */
+@media (max-width: 640px) {
+  .offer-block .offer-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .offer-block h2 {
+    font-size: 1.15rem;
+  }
+}

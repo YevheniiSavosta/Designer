@@ -1,0 +1,253 @@
+/* Основний контейнер сторінки - 100% ширини батьківського елемента */
+.payment-page-fluid {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  color: #333;
+  line-height: 1.6;
+}
+
+.payment-page-fluid *, 
+.payment-page-fluid *::before, 
+.payment-page-fluid *::after {
+  box-sizing: border-box;
+}
+
+.payment-hero h1 {
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.payment-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #eef7ff;
+  border-left: 4px solid #0066cc;
+  padding: 14px 18px;
+  margin: 15px 0 30px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.badge-icon {
+  font-size: 1.2rem;
+}
+
+.payment-section {
+  margin-bottom: 35px;
+  width: 100%;
+}
+
+.payment-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 8px;
+}
+
+.section-subtitle {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Картка з реквізитами */
+.payment-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 24px;
+  background-color: #fff;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.payment-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-bottom: 1px solid #edf2f7;
+  padding-bottom: 12px;
+  margin-bottom: 15px;
+}
+
+.payment-card-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.processing-time {
+  font-size: 0.875rem;
+  color: #4a5568;
+  background: #edf2f7;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* Список реквізитів */
+.requisites-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 18px;
+  border-radius: 6px;
+  margin: 15px 0;
+  width: 100%;
+}
+
+.requisites-box h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.requisites-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.requisites-list li {
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: baseline;
+}
+
+.requisites-list li:last-child {
+  margin-bottom: 0;
+}
+
+.iban-code {
+  font-family: monospace;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #e2e8f0;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  word-break: break-all; /* Гарантує, що IBAN не зламає верстку на вузьких екранах */
+}
+
+.payment-purpose {
+  margin: 18px 0;
+}
+
+.payment-purpose code {
+  display: block;
+  background: #f1f5f9;
+  border: 1px dashed #cbd5e1;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #1e293b;
+  margin-top: 6px;
+  word-break: break-word;
+}
+
+/* Попередження */
+.alert-warning {
+  display: flex;
+  gap: 12px;
+  background-color: #fffbe6;
+  border: 1px solid #ffe58f;
+  padding: 16px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  margin-top: 15px;
+}
+
+.alert-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+/* Гумова сітка для кроків (Flexbox/Grid) */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.step-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.step-card-wide {
+  grid-column: 1 / -1; /* Займає всю ширину останньої строчки */
+}
+
+.step-number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0066cc;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.step-card h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.05rem;
+}
+
+.step-card p {
+  font-size: 0.925rem;
+  margin: 0;
+  color: #4a5568;
+}
+
+/* Інформаційній блок */
+.info-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.info-list {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.info-list li {
+  margin-bottom: 12px;
+}
+
+.info-list li:last-child {
+  margin-bottom: 0;
+}
+
+.contact-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  padding: 6px 14px;
+  border-radius: 6px;
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.contact-btn:hover {
+  background: #0066cc;
+  color: #fff;
+  border-color: #0066cc;
+}

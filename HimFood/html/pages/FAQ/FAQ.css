@@ -1,0 +1,158 @@
+/* ==========================================
+   Часті питання / FAQ (Без зовнішнього контейнера)
+   ========================================== */
+
+.faq-block {
+  /* Червона палітра та нейтральні тони */
+  --faq-primary: #18181b;        /* Темний колір заголовків та питань */
+  --faq-accent: #dc2626;         /* Основний червоний акцент */
+  --faq-accent-dark: #b91c1c;    /* Темно-червоний для активних станів */
+  --faq-text: #3f3f46;           /* Текст відповідей */
+  --faq-muted: #71717a;          /* Приглушений текст */
+  --faq-border: #e4e4e7;         /* Нейтральні рамки */
+  --faq-bg-card: #ffffff;        /* Фон плашки питання */
+  --faq-bg-hover: #fef2f2;       /* Світло-рожевий фон при наведенні */
+
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--faq-text);
+  font-family: inherit; /* Успадковує шрифт вашого сайту */
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Скидання стилів для елементів всередині блоку */
+.faq-block *,
+.faq-block *::before,
+.faq-block *::after {
+  box-sizing: border-box;
+}
+
+/* Шапка секції */
+.faq-block .faq-header {
+  border-bottom: 2px solid var(--faq-bg-hover);
+  padding-bottom: 16px;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.faq-block .faq-header::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background-color: var(--faq-accent);
+}
+
+.faq-block .faq-header h2 {
+  font-size: 1.8rem;
+  color: var(--faq-primary);
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Список питань (Акордеон) */
+.faq-block .faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-block details {
+  border: 1px solid var(--faq-border);
+  border-radius: 10px;
+  background-color: var(--faq-bg-card);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+.faq-block details[open] {
+  border-color: var(--faq-accent);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.06);
+}
+
+/* Заголовок питання (кнопка розгортання) */
+.faq-block summary {
+  padding: 18px 20px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--faq-primary);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.faq-block summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-block summary:hover {
+  background-color: var(--faq-bg-hover);
+  color: var(--faq-accent);
+}
+
+/* Іконка індикатора (+ / −) */
+.faq-block summary::after {
+  content: '+';
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--faq-accent);
+  line-height: 1;
+  margin-left: 16px;
+  transition: transform 0.2s ease;
+}
+
+.faq-block details[open] summary::after {
+  content: '−';
+}
+
+.faq-block details[open] summary {
+  color: var(--faq-accent);
+  border-bottom: 1px solid var(--faq-bg-hover);
+}
+
+/* Контент відповіді */
+.faq-block .faq-content {
+  padding: 18px 20px;
+  color: var(--faq-text);
+  font-size: 0.975rem;
+  line-height: 1.7;
+}
+
+.faq-block .faq-content p {
+  margin: 0 0 12px 0;
+}
+
+.faq-block .faq-content p:last-child {
+  margin-bottom: 0;
+}
+
+.faq-block .faq-content ul,
+.faq-block .faq-content ol {
+  margin: 8px 0 12px 20px;
+}
+
+.faq-block .faq-content li {
+  margin-bottom: 6px;
+}
+
+/* Мобільна адаптивність */
+@media (max-width: 640px) {
+  .faq-block summary {
+    padding: 14px 16px;
+    font-size: 0.975rem;
+  }
+
+  .faq-block .faq-content {
+    padding: 14px 16px;
+  }
+}

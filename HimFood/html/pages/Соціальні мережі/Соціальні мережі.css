@@ -1,0 +1,480 @@
+
+/* ==================================================
+   HIMFOOD.PP.UA — SOCIAL REDIRECT PAGE
+   Responsive design for OkayCMS
+   Version 2.0
+================================================== */
+
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+
+.hf-social-page {
+    --hf-red: #a00000;
+    --hf-red-dark: #820000;
+    --hf-text: #242424;
+    --hf-muted: #858585;
+    --hf-border: #eeeeee;
+
+    width: 100%;
+    padding: 55px 20px 65px;
+    box-sizing: border-box;
+    background: #f7f7f7;
+    font-family: inherit;
+    overflow: hidden;
+}
+
+.hf-social-page *,
+.hf-social-page *::before,
+.hf-social-page *::after {
+    box-sizing: border-box;
+}
+
+.hf-social-container {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+
+/* ================================
+   HEADING
+================================ */
+
+.hf-social-heading {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.hf-social-eyebrow {
+    display: inline-block;
+    padding: 7px 15px;
+    border-radius: 30px;
+    background: #fff0f0;
+    color: var(--hf-red);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hf-social-heading h1 {
+    color: var(--hf-text);
+    font-size: clamp(27px, 4vw, 38px);
+    line-height: 1.2;
+    font-weight: 800;
+    margin: 0 0 14px;
+    padding: 0;
+}
+
+.hf-social-heading p {
+    max-width: 530px;
+    margin: 0 auto;
+    color: #777777;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* ================================
+   SOCIAL GRID
+================================ */
+
+.hf-social-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+
+/* ================================
+   SOCIAL CARD
+================================ */
+
+.hf-social-card {
+    --hf-accent: #a00000;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    min-width: 0;
+    min-height: 100px;
+    padding: 20px 17px;
+
+    border: 1px solid var(--hf-border);
+    border-radius: 13px;
+
+    background: #ffffff;
+    color: var(--hf-text) !important;
+
+    text-decoration: none !important;
+
+    overflow: hidden;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+/* Colored accent */
+
+.hf-social-card::before {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    top: 18px;
+    bottom: 18px;
+
+    width: 3px;
+    border-radius: 0 5px 5px 0;
+
+    background: var(--hf-accent);
+    opacity: .7;
+
+    transition: opacity .25s ease;
+}
+
+/* Hover */
+
+.hf-social-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #e0e0e0;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .07);
+
+    color: var(--hf-text) !important;
+    text-decoration: none !important;
+}
+
+.hf-social-card:hover::before {
+    opacity: 1;
+}
+
+/* Remove theme link decorations */
+
+.hf-social-card:focus,
+.hf-social-card:active,
+.hf-social-card:visited {
+    text-decoration: none !important;
+}
+
+
+/* ================================
+   ICON
+================================ */
+
+.hf-social-icon {
+    flex: 0 0 49px;
+
+    width: 49px;
+    height: 49px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    color: var(--hf-accent);
+    background: var(--hf-icon-bg, #fff0f0);
+
+    font-size: 27px;
+    font-weight: 800;
+    line-height: 1;
+
+    transition: transform .25s ease;
+}
+
+.hf-social-card:hover .hf-social-icon {
+    transform: scale(1.08);
+}
+
+
+/* ================================
+   CARD TEXT
+================================ */
+
+.hf-social-info {
+    display: flex;
+    flex: 1;
+
+    flex-direction: column;
+    gap: 5px;
+
+    min-width: 0;
+}
+
+.hf-social-info strong {
+    display: block;
+
+    color: #292929;
+
+    font-size: 15px;
+    font-weight: 750;
+    line-height: 1.3;
+}
+
+.hf-social-info small {
+    display: block;
+
+    color: var(--hf-muted);
+
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+
+/* ================================
+   ARROW
+================================ */
+
+.hf-social-arrow {
+    flex: 0 0 auto;
+
+    align-self: center;
+
+    color: #bdbdbd;
+    font-size: 19px;
+
+    transition:
+        transform .25s ease,
+        color .25s ease;
+}
+
+.hf-social-card:hover .hf-social-arrow {
+    color: var(--hf-accent);
+    transform: translate(3px, -3px);
+}
+
+
+/* ================================
+   SOCIAL BRAND COLORS
+================================ */
+
+/* TikTok */
+
+.hf-tiktok {
+    --hf-accent: #171717;
+    --hf-icon-bg: #f1f1f1;
+}
+
+/* Instagram */
+
+.hf-instagram {
+    --hf-accent: #d34b80;
+    --hf-icon-bg: #fff0f5;
+}
+
+/* Telegram */
+
+.hf-telegram {
+    --hf-accent: #229ed9;
+    --hf-icon-bg: #edf8ff;
+}
+
+/* Viber */
+
+.hf-viber {
+    --hf-accent: #7360b5;
+    --hf-icon-bg: #f3f0ff;
+}
+
+/* WhatsApp */
+
+.hf-whatsapp {
+    --hf-accent: #20a464;
+    --hf-icon-bg: #edfaf3;
+}
+
+/* Home */
+
+.hf-home {
+    --hf-accent: #a00000;
+    --hf-icon-bg: #fff0f0;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+.hf-social-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    margin-top: 38px;
+}
+
+.hf-social-footer p {
+    margin: 0;
+
+    color: #999999;
+
+    font-size: 12px;
+    text-align: center;
+}
+
+.hf-social-footer strong {
+    color: var(--hf-red);
+}
+
+.hf-social-footer-line {
+    width: 45px;
+    height: 1px;
+
+    background: #e4e4e4;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 800px) {
+
+    .hf-social-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+    }
+
+    .hf-social-page {
+        padding: 40px 18px 50px;
+    }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 480px) {
+
+    .hf-social-page {
+        padding: 32px 14px 40px;
+    }
+
+    .hf-social-heading {
+        margin-bottom: 27px;
+    }
+
+    .hf-social-heading h1 {
+        font-size: 27px;
+    }
+
+    .hf-social-heading p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .hf-social-grid {
+        grid-template-columns: 1fr;
+        gap: 11px;
+    }
+
+    .hf-social-card {
+        min-height: 83px;
+        padding: 15px;
+        gap: 13px;
+        border-radius: 11px;
+    }
+
+    .hf-social-icon {
+        flex-basis: 45px;
+        width: 45px;
+        height: 45px;
+        border-radius: 11px;
+        font-size: 25px;
+    }
+
+    .hf-social-info strong {
+        font-size: 14px;
+    }
+
+    .hf-social-info small {
+        font-size: 11px;
+    }
+
+    .hf-social-footer {
+        margin-top: 28px;
+        gap: 9px;
+    }
+
+    .hf-social-footer-line {
+        width: 25px;
+    }
+
+}
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 360px) {
+
+    .hf-social-page {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .hf-social-card {
+        padding: 13px 12px;
+        gap: 10px;
+    }
+
+    .hf-social-info strong {
+        font-size: 13px;
+    }
+
+    .hf-social-info small {
+        font-size: 10px;
+    }
+
+}
+
+
+/* ================================
+   TOUCH DEVICES
+================================ */
+
+@media (hover: none) {
+
+    .hf-social-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .hf-social-card:hover .hf-social-icon {
+        transform: none;
+    }
+
+    .hf-social-card:hover .hf-social-arrow {
+        transform: none;
+    }
+
+}
+
+
+/* ================================
+   ACCESSIBILITY
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hf-social-card,
+    .hf-social-icon,
+    .hf-social-arrow,
+    .hf-social-card::before {
+        transition: none !important;
+    }
+
+}
